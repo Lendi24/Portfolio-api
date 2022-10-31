@@ -26,11 +26,11 @@ class ProjectController extends Controller
     public function store(Request $request)
     {
         return Project::create([
-            'title'         => 'testtitle',
-            'description'   => 'desc',
-            'image_URL'     => 'img',
-            'writeup_URL'   => 'write',
-    
+            'title'             => $request->title,
+            'description'       => $request->description,
+
+            'image_URL'         => 'img',
+            'writeup_URL'       => 'write',
         ]);
     }
 
