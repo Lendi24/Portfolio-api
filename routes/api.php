@@ -18,7 +18,11 @@ use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 */
 
 Route::prefix('/v1')->group(function () {
+    //Public
     Route::get  ('/projects', [ProjectController::class, 'index']);
+    Route::get  ('/projects/{id}', [ProjectController::class, 'show']);
+
+    //Private
     Route::post ('/projects', [ProjectController::class, 'store']);
 });
 

@@ -25,6 +25,11 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'title'             => 'required',
+            'description'       => 'required',
+        ]);
+
         return Project::create([
             'title'             => $request->title,
             'description'       => $request->description,
@@ -42,7 +47,7 @@ class ProjectController extends Controller
      */
     public function show($id)
     {
-        //
+        return Project::find($id);
     }
 
     /**
