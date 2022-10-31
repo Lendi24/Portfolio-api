@@ -25,6 +25,9 @@ Route::prefix('/v1')->group(function () {
         return Project::create([
             'title'         => 'testtitle',
             'description'   => 'desc',
+            'image_URL'     => 'img',
+            'writeup_URL'   => 'write',
+    
         ]);
     });
 

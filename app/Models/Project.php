@@ -8,4 +8,18 @@ use Illuminate\Database\Eloquent\Model;
 class Project extends Model
 {
     use HasFactory;
+
+    protected $table = "projects";
+
+    protected $fillable = [
+        'title',
+        'description',
+
+        'image_URL',
+        'writeup_URL',
+    ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
 }
