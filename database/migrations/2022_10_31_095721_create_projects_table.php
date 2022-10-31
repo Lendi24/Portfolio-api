@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('description');
 
-            $table->string('images_URL');
+            $table->string('image_URL');
             $table->string('writeup_URL');
 
             $table->timestamps();
