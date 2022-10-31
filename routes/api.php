@@ -1,9 +1,10 @@
 <?php
 
+use App\Http\Controllers\ProjectController;
+
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
-use App\Models\Project;
+use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,20 +18,8 @@ use App\Models\Project;
 */
 
 Route::prefix('/v1')->group(function () {
-    Route::get('/projects', function () {
-        return Project::all();
-    });
-
-    Route::post('/projects', function () {
-        return Project::create([
-            'title'         => 'testtitle',
-            'description'   => 'desc',
-            'image_URL'     => 'img',
-            'writeup_URL'   => 'write',
-    
-        ]);
-    });
-
+    Route::get  ('/projects', [ProjectController::class, 'index']);
+    Route::post ('/projects', [ProjectController::class, 'store']);
 });
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
