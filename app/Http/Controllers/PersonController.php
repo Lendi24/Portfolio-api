@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Person;
 
 class PersonController extends Controller
 {
@@ -13,7 +14,7 @@ class PersonController extends Controller
      */
     public function index()
     {
-        //
+        return Person::all();
     }
 
     /**
@@ -24,7 +25,19 @@ class PersonController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'first_name'        => 'required',
+            'middle_name'       => 'required',
+            'last_name'         => 'required',
+        ]);
+
+        return Person::create([
+            'first_name'        => $request->first_name,
+            'middle_name'       => $request->middle_name, 
+            'last_name'         => $request->last_name,
+    
+            'image_URL'         => "filler",
+        ]);
     }
 
     /**
@@ -35,7 +48,7 @@ class PersonController extends Controller
      */
     public function show($id)
     {
-        //
+        return Person::find($id);
     }
 
     /**

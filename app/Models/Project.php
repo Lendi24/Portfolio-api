@@ -18,8 +18,4 @@ class Project extends Model
         'image_URL',
         'writeup_URL',
     ];
-
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
 }
