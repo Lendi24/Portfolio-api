@@ -14,6 +14,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::prefix('/v1')->group(function () {
+    Route::get('/people', function () {
+        return 'ref';
+    });
+
+    Route::get('/projects', function () {
+        return 'ref';
+    });
+});
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+
+
+/*
+
+Route::name('/api')->group(function () {
+    Route::name('/v1')->group(function () {
+        Route::get('/people', function () {
+        })->name('users');
+    });
+});
+*/
