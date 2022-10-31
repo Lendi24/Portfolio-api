@@ -59,8 +59,22 @@ class ProjectController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $object = Project::find($id);
+        $object->update($request->all());
+        return $object;
     }
+
+    /**
+     * Looks for a object given its name.
+     *
+     * @param  str  $name
+     * @return \Illuminate\Http\Response
+     */
+    public function search($name)
+    {
+        return Project::where('title', 'like', '%'.$name.'%')->get();
+    }
+
 
     /**
      * Remove the specified resource from storage.
@@ -70,6 +84,6 @@ class ProjectController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Project::destroy($id);
     }
 }

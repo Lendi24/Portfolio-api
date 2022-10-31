@@ -60,7 +60,21 @@ class PersonController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $object = Person::find($id);
+        $object->update($request->all());
+        return $object;
+    }
+
+
+    /**
+     * Looks for a object given its name.
+     *
+     * @param  str  $name
+     * @return \Illuminate\Http\Response
+     */
+    public function search($name)
+    {
+        return Person::where('first_name', 'like', '%'.$name.'%')->get();
     }
 
     /**
@@ -71,6 +85,6 @@ class PersonController extends Controller
      */
     public function destroy($id)
     {
-        //
+        return Person::destroy($id);
     }
 }

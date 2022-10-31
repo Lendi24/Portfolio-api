@@ -21,21 +21,33 @@ use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 Route::prefix('/v1')->group(function () {
     Route::prefix('/projects')->group(function () {
+
         //Public
-        Route::get  ('/',       [ProjectController::class, 'index']);
-        Route::get  ('/{id}',   [ProjectController::class, 'show']);
+        Route::get   ('/',              [ProjectController::class, 'index'  ]    );
+        Route::get   ('/{id}',          [ProjectController::class, 'show'   ]    );
+        Route::get   ('search/{name}',  [ProjectController::class, 'search' ]    );
     
         //Private
-        Route::post ('/',       [ProjectController::class, 'store']);
+        Route::post  ('/',              [ProjectController::class, 'store'  ]    );
+        Route::put   ('/{id}',          [ProjectController::class, 'update' ]    );
+        Route::patch ('/{id}',          [ProjectController::class, 'update' ]    );
+        Route::delete('/{id}',          [ProjectController::class, 'destroy']    );
+
     });
 
     Route::prefix('/people')->group(function () {
+        
         //Public
-        Route::get  ('/',       [PersonController::class, 'index']);
-        Route::get  ('/{id}',   [PersonController::class, 'show']);
-    
+        Route::get   ('/',              [PersonController::class, 'index'  ]    );
+        Route::get   ('/{id}',          [PersonController::class, 'show'   ]    );
+        Route::get   ('search/{name}',  [PersonController::class, 'search' ]    );
+
         //Private
-        Route::post ('/',       [PersonController::class, 'store']);
+        Route::post  ('/',              [PersonController::class, 'store'  ]    );
+        Route::put   ('/{id}',          [PersonController::class, 'update' ]    );
+        Route::patch ('/{id}',          [PersonController::class, 'update' ]    );
+        Route::delete('/{id}',          [PersonController::class, 'destroy']    );
+
     });
 });
 
