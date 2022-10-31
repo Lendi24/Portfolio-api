@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use PHPUnit\TextUI\XmlConfiguration\Group;
 use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 
 /*
@@ -28,26 +29,28 @@ Route::prefix('/v1')->group(function () {
         Route::get   ('search/{name}',  [ProjectController::class, 'search' ]    );
     
         //Private
-        Route::post  ('/',              [ProjectController::class, 'store'  ]    );
-        Route::put   ('/{id}',          [ProjectController::class, 'update' ]    );
-        Route::patch ('/{id}',          [ProjectController::class, 'update' ]    );
-        Route::delete('/{id}',          [ProjectController::class, 'destroy']    );
-
+        Route::group(['middleware' => ['auth:sanctum']], function () {
+            Route::post  ('/',              [ProjectController::class, 'store'  ]    );
+            Route::put   ('/{id}',          [ProjectController::class, 'update' ]    );
+            Route::patch ('/{id}',          [ProjectController::class, 'update' ]    );
+            Route::delete('/{id}',          [ProjectController::class, 'destroy']    );
+        });
     });
 
     Route::prefix('/people')->group(function () {
-        
+
         //Public
         Route::get   ('/',              [PersonController::class, 'index'  ]    );
         Route::get   ('/{id}',          [PersonController::class, 'show'   ]    );
         Route::get   ('search/{name}',  [PersonController::class, 'search' ]    );
 
         //Private
-        Route::post  ('/',              [PersonController::class, 'store'  ]    );
-        Route::put   ('/{id}',          [PersonController::class, 'update' ]    );
-        Route::patch ('/{id}',          [PersonController::class, 'update' ]    );
-        Route::delete('/{id}',          [PersonController::class, 'destroy']    );
-
+        Route::group(['middleware' => ['auth:sanctum']], function () {
+            Route::post  ('/',              [PersonController::class, 'store'  ]    );
+            Route::put   ('/{id}',          [PersonController::class, 'update' ]    );
+            Route::patch ('/{id}',          [PersonController::class, 'update' ]    );
+            Route::delete('/{id}',          [PersonController::class, 'destroy']    );
+        });
     });
 });
 
