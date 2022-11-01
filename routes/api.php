@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\UserController;
@@ -21,6 +22,22 @@ use SebastianBergmann\CodeCoverage\Report\Xml\Project;
 */
 
 Route::prefix('/v1')->group(function () {
+    
+
+
+    Route::prefix('/auth')->group(function () {
+        Route::post      ('/register',      [AuthController::class, 'register'  ]    );
+        Route::post      ('/login',         [AuthController::class, 'login'     ]    );
+
+        Route::group(['middleware' => ['auth:sanctum']], function () {
+            Route::post      ('/logout',      [AuthController::class, 'logout'  ]    );
+        });
+
+        Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+            return $request->user();
+        });    
+    });
+
     Route::prefix('/projects')->group(function () {
 
         //Public
@@ -54,9 +71,6 @@ Route::prefix('/v1')->group(function () {
     });
 });
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
 
 
 
