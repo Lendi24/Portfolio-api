@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('applied_language_tags', function (Blueprint $table) {
             $table->id();
-            $table->id('project_id');
-            $table->id('tag_id');
-            $table->id('tag_id_parent');
+            $table->foreignId('project_id');
+            $table->foreignId('tag_id');
+            $table->foreignId('tag_id_parent');
             $table->timestamps();
         });
     }

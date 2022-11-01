@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('applied_contact_tags', function (Blueprint $table) {
             $table->id();
-            $table->id('person_id');
-            $table->id('contact_id');
+            $table->foreignId('person_id');
+            $table->foreignId('contact_id');
 
             $table->string('target');
             $table->string('information');

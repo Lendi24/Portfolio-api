@@ -14,6 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(PlattformTagsSeeder::class);
+        $this->call( LanguageTagsSeeder::class);
+        $this->call(PlattformTagsSeeder::class);
+
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([
