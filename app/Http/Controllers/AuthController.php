@@ -39,7 +39,7 @@ class AuthController extends Controller
         ]);
 
         //Check e-mail
-        $user = User::where('email', $fields['email']);
+        $user = User::where('email', $fields['email'])->first();
 
         //Check p-word
         if (!$user || !Hash::check($fields['password'], $user->password)) {
