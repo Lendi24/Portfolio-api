@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ContactTag extends Model
+class AppliedContactTag extends Model
 {
     use HasFactory;
 
-    protected $table = "contact_tags";
+    protected $table = "applied_contact_tags";
     protected $primaryKey = "id";
 
-    public function appliedContactTags() {
-        return $this->hasMany(AppliedContactTag::class);
+    public function contactTag() {
+        return $this->belongsTo(ContactTag::class);
     }
 }

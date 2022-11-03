@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class PlattformTag extends Model
 {
     use HasFactory;
+
+    protected $table = "plattform_tags";
+    protected $primaryKey = "id";
+
+    public function appliedPlattformTags() {
+        return $this->hasMany(AppliedPlattformTag::class);
+    }
 }

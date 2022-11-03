@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('applied_contact_tags', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('person_id');
-            $table->foreignId('contact_id');
+
+            $table->foreignId('person_id')->references('id')->on('people')->onDelete('cascade');
+            $table->foreignId('contact_id')->references('id')->on('contact_tags')->onDelete('cascade');
 
             $table->string('target');
             $table->string('information');

@@ -15,8 +15,10 @@ return new class extends Migration
     {
         Schema::create('applied_plattform_tags', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('project_id');
-            $table->foreignId('plattfrom_id');
+
+            $table->foreignId('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreignId('plattfrom_id')->references('id')->on('plattform_tags')->onDelete('cascade');
+
             $table->string('target');
             $table->timestamps();
         });

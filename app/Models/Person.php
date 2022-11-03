@@ -10,6 +10,7 @@ class Person extends Model
     use HasFactory;
 
     protected $table = "people";
+    protected $primaryKey = "id";
 
     protected $fillable = [
         'first_name',
@@ -18,4 +19,8 @@ class Person extends Model
 
         'image_URL',
     ];
+
+    public function appliedContactTags() {
+        return $this->hasMany(AppliedContactTag::class);
+    }
 }
