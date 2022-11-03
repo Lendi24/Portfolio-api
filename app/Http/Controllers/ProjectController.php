@@ -70,10 +70,10 @@ class ProjectController extends Controller
      * @param  str  $name
      * @return \Illuminate\Http\Response
      */
-    public function search($name)
+    public function search($q)
     {
-        return Project::where('title', 'like', '%'.$name.'%')
-        ->orWhere('description', 'like', '%'.$name.'%')
+        return Project::where('title', 'like', '%'.$q.'%')
+        ->orWhere('description', 'like', '%'.$q.'%')
         ->get();
     }
 
