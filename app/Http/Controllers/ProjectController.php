@@ -45,25 +45,10 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        return (Project::find($id));
-    }
-
-    public function showLang($id)
-    {
-        return (Project::find($id) -> appliedLanguageTags);
-    }
-
-    public function showPlat($id)
-    {
-        return (Project::find($id) -> appliedPlattformTags);
-    }
-
-    public function showPeop($id)
-    {
-        return ('');
-    }
+    public function show($id) { return (Project::find($id)); }
+    public function showLang($id) { return (Project::find($id) -> appliedLanguageTags); }
+    public function showPlat($id) { return (Project::find($id) -> appliedPlattformTags); }
+    public function showPeop($id) { return (''); }
 
 
     /**
