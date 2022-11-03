@@ -43,7 +43,7 @@ Route::prefix('/v1')->group(function () {
         //Public
         Route::get   ('/',              [ProjectController::class, 'index'  ]    );
         Route::get   ('/{id}',          [ProjectController::class, 'show'   ]    );
-        Route::get   ('search/{name}',  [ProjectController::class, 'search' ]    );
+        Route::get   ('search/{q}',     [ProjectController::class, 'search' ]    );
     
         //Private
         Route::group(['middleware' => ['auth:sanctum']], function () {
@@ -59,7 +59,7 @@ Route::prefix('/v1')->group(function () {
         //Public
         Route::get   ('/',              [PersonController::class, 'index'  ]    );
         Route::get   ('/{id}',          [PersonController::class, 'show'   ]    );
-        Route::get   ('search/{name}',  [PersonController::class, 'search' ]    );
+        Route::get   ('search/{q}',     [PersonController::class, 'search' ]    );
 
         //Private
         Route::group(['middleware' => ['auth:sanctum']], function () {

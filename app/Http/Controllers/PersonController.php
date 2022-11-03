@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Person;
+use App\Models\Project;
 
 class PersonController extends Controller
 {
@@ -27,8 +28,6 @@ class PersonController extends Controller
     {
         $request->validate([
             'first_name'        => 'required',
-            'middle_name'       => 'required',
-            'last_name'         => 'required',
         ]);
 
         return Person::create([
@@ -72,9 +71,12 @@ class PersonController extends Controller
      * @param  str  $name
      * @return \Illuminate\Http\Response
      */
-    public function search($name)
+    public function search($q)
     {
-        return Person::where('first_name', 'like', '%'.$name.'%')->get();
+        return  Person::where('first_name', 'like', '%'.$q.'%')
+            ->orWhere('last_name', 'like', '%'.$q.'%')
+            ->orWhere('middle_name', 'like', '%'.$q.'%')
+            ->get();
     }
 
     /**

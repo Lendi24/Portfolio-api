@@ -72,7 +72,9 @@ class ProjectController extends Controller
      */
     public function search($name)
     {
-        return Project::where('title', 'like', '%'.$name.'%')->get();
+        return Project::where('title', 'like', '%'.$name.'%')
+        ->orWhere('description', 'like', '%'.$name.'%')
+        ->get();
     }
 
 
