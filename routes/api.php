@@ -41,9 +41,12 @@ Route::prefix('/v1')->group(function () {
     Route::prefix('/projects')->group(function () {
 
         //Public
-        Route::get   ('/',              [ProjectController::class, 'index'  ]    );
-        Route::get   ('/{id}',          [ProjectController::class, 'show'   ]    );
-        Route::get   ('search/{q}',     [ProjectController::class, 'search' ]    );
+        Route::get   ('/',               [ProjectController::class, 'index'   ]    );
+        Route::get   ('/{id}',           [ProjectController::class, 'show'    ]    );
+        Route::get   ('/{id}/languages', [ProjectController::class, 'showLang']    );
+        Route::get   ('/{id}/plattforms',[ProjectController::class, 'showPlat']    );
+        Route::get   ('/{id}/people',    [ProjectController::class, 'showPeop']    );
+        Route::get   ('search/{q}',      [ProjectController::class, 'search'  ]    );
     
         //Private
         Route::group(['middleware' => ['auth:sanctum']], function () {
