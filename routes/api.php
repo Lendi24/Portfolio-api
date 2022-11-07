@@ -46,8 +46,9 @@ Route::prefix('/v1')->group(function () {
         Route::get   ('/{id}/languages', [ProjectController::class, 'showLang']    );
         Route::get   ('/{id}/plattforms',[ProjectController::class, 'showPlat']    );
         Route::get   ('/{id}/people',    [ProjectController::class, 'showPeop']    );
-        Route::get   ('search/{q}',      [ProjectController::class, 'search'  ]    );
-    
+        Route::get   ('/search/{q}',     [ProjectController::class, 'search'  ]    );
+        //Route::get   ('/length',         [ProjectController::class, 'getLen'  ]    );
+
         //Private
         Route::group(['middleware' => ['auth:sanctum']], function () {
             Route::post  ('/',              [ProjectController::class, 'store'  ]    );

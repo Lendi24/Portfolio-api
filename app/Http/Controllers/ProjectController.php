@@ -49,7 +49,9 @@ class ProjectController extends Controller
     public function showLang($id) { return (Project::find($id) -> appliedLanguageTags); }
     public function showPlat($id) { return (Project::find($id) -> appliedPlattformTags); }
     public function showPeop($id) { return (''); }
+    //public function getLen() { return (Project::find(0)); }
 
+    //public function getLen() { return (Project::all()); }
 
     /**
      * Update the specified resource in storage.
