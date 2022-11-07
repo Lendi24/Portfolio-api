@@ -2,8 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AppliedContactTag;
+use App\Models\AppliedLanguageTag;
+use App\Models\AppliedPlattformTag;
+use App\Models\LanguageTag;
+use App\Models\PlattformTag;
 use Illuminate\Http\Request;
 use App\Models\Project;
+use GuzzleHttp\Psr7\Response;
 
 class ProjectController extends Controller
 {
@@ -45,7 +51,22 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id) { return (Project::find($id)); }
+    public function showLanguage($id) {return LanguageTag::find($id);}
+    public function showPlattform($id) {return PlattformTag::find($id);}
+
+    public function show($id) { 
+        $appliedLanguageTags  = (AppliedLanguageTag::select('tag_id')->where('project_id','=',$id) -> get());        
+        $appliedPlattformTags = (AppliedPlattformTag::select('plattfrom_id', 'target')->where('project_id','=',$id) -> get()); 
+
+        $project = (Project::find($id));
+
+        return [
+            'data' => $project,
+            'languageTags' => $appliedLanguageTags,
+            'plattformTags' => $appliedPlattformTags,
+
+        ];
+    }
     public function showLang($id) { return (Project::find($id) -> appliedLanguageTags); }
     public function showPlat($id) { return (Project::find($id) -> appliedPlattformTags); }
     public function showPeop($id) { return (''); }

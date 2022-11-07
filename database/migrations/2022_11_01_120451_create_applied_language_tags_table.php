@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('project_id')->references('id')->on('projects')->onDelete('cascade');
-            $table->foreignId('tag_id')->references('id')->on('language_tags')->onDelete('cascade');
-            $table->foreignId('tag_id_parent')->references('id')->on('applied_language_tags')->onDelete('cascade');
+            $table->foreignId('language_tag_id')->references('id')->on('language_tags')->onDelete('cascade');
+            $table->foreignId('language_tag_id_parent')->references('id')->on('applied_language_tags')->onDelete('cascade');
 
             $table->timestamps();
         });

@@ -38,6 +38,17 @@ Route::prefix('/v1')->group(function () {
         });    
     });
 
+
+
+    Route::prefix('/tags')->group(function () {
+
+        //Public
+        Route::get   ('/languages/{id}',      [ProjectController::class, 'showLanguage'  ]    );
+        Route::get   ('/plattforms/{id}',     [ProjectController::class, 'showPlattform'  ]    );
+        //Route::get   ('/contact/{id}',       [PersonController::class,  ''  ]    );
+
+    });
+
     Route::prefix('/projects')->group(function () {
 
         //Public

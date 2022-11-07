@@ -21,13 +21,13 @@ class PlattformTagsSeeder extends Seeder
             [
                 'name'   => 'Source',
                 'device' => 'any',
-                'icon'   => '',
+                'icon'   => 'mdi-git',
             ],
 
             [
                 'name'   => 'Web',
                 'device' => 'any',
-                'icon'   => '',
+                'icon'   => 'mdi-web',
             ],
 
 
