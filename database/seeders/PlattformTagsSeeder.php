@@ -35,19 +35,19 @@ class PlattformTagsSeeder extends Seeder
             [
                 'name'   => 'Windows',
                 'device' => 'pc',
-                'icon'   => '',
+                'icon'   => 'mdi-microsoft-windows',
             ],
 
             [
                 'name'   => 'MacOS',
                 'device' => 'pc',
-                'icon'   => '',
+                'icon'   => 'mdi-apple-finder',
             ],
 
             [
                 'name'   => 'GNU/Linux',
                 'device' => 'pc',
-                'icon'   => '',
+                'icon'   => 'mdi-penguin',
             ],
 
 
@@ -55,13 +55,13 @@ class PlattformTagsSeeder extends Seeder
             [
                 'name'   => 'Android',
                 'device' => 'mobile',
-                'icon'   => '',
+                'icon'   => 'mdi-android',
             ],
 
             [
                 'name'   => 'iOS',
                 'device' => 'mobile',
-                'icon'   => '',
+                'icon'   => 'mdi-apple-ios',
             ],
         ];
         
