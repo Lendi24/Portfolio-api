@@ -20,7 +20,11 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        return Project::all();
+        $returnObj = [];
+        foreach (Project::all() as $key => $value) {
+            $returnObj[$key] = ["projectData" => $value];
+        }
+        return $returnObj;
     }
 
     /**
@@ -61,10 +65,11 @@ class ProjectController extends Controller
         $project = (Project::find($id));
 
         return [
-            'data' => $project,
-            'languageTags' => $appliedLanguageTags,
-            'plattformTags' => $appliedPlattformTags,
-
+            'projectData' => $project,
+            'tags' => [
+                'languageTags' => $appliedLanguageTags,
+                'plattformTags' => $appliedPlattformTags,    
+            ]
         ];
     }
     public function showLang($id) { return (Project::find($id) -> appliedLanguageTags); }
