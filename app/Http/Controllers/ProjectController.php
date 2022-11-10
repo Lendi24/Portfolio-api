@@ -24,7 +24,7 @@ class ProjectController extends Controller
         foreach (Project::all() as $key => $value) {
             $returnObj[$key] = ["projectData" => $value];
         }
-        return (array_reverse($returnObj));
+        return (/*array_reverse*/($returnObj));
     }
 
     /**
