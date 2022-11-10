@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
 
             $table->foreignId('project_id')->references('id')->on('projects')->onDelete('cascade');
-            $table->foreignId('plattfrom_id')->references('id')->on('plattform_tags')->onDelete('cascade');
+            $table->foreignId('plattfrom_tag_id')->references('id')->on('plattform_tags')->onDelete('cascade');
 
             $table->string('target');
             $table->timestamps();

@@ -24,7 +24,7 @@ class ProjectController extends Controller
         foreach (Project::all() as $key => $value) {
             $returnObj[$key] = ["projectData" => $value];
         }
-        return $returnObj;
+        return (array_reverse($returnObj));
     }
 
     /**
@@ -59,8 +59,8 @@ class ProjectController extends Controller
     public function showPlattform($id) {return PlattformTag::find($id);}
 
     public function show($id) { 
-        $appliedLanguageTags  = (AppliedLanguageTag::select('tag_id')->where('project_id','=',$id) -> get());        
-        $appliedPlattformTags = (AppliedPlattformTag::select('plattfrom_id', 'target')->where('project_id','=',$id) -> get()); 
+        $appliedLanguageTags  = (AppliedLanguageTag::select('language_tag_id')->where('project_id','=',$id) -> get());        
+        $appliedPlattformTags = (AppliedPlattformTag::select('plattfrom_tag_id', 'target')->where('project_id','=',$id) -> get()); 
 
         $project = (Project::find($id));
 

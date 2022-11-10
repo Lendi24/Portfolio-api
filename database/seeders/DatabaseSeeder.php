@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
         $this->call( LanguageTagsSeeder::class);
         $this->call(  ContactTagsSeeder::class);
 
+        $this->call(    ProjectSeeder::class);
+        $this->call(ProjectTagsSeeder::class);
+
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

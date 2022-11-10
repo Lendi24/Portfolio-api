@@ -20,18 +20,12 @@ class PlattformTagsSeeder extends Seeder
 
             [
                 'name'   => 'Source',
-                'device' => 'any',
+                'device' => 'source',
                 'icon'   => 'mdi-git',
             ],
 
-            [
-                'name'   => 'Web',
-                'device' => 'any',
-                'icon'   => 'mdi-web',
-            ],
 
-
-
+            
             [
                 'name'   => 'Windows',
                 'device' => 'pc',
@@ -62,6 +56,14 @@ class PlattformTagsSeeder extends Seeder
                 'name'   => 'iOS',
                 'device' => 'mobile',
                 'icon'   => 'mdi-apple-ios',
+            ],
+
+
+            
+            [
+                'name'   => 'Web',
+                'device' => 'web',
+                'icon'   => 'mdi-web',
             ],
         ];
         
