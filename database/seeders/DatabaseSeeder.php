@@ -21,6 +21,9 @@ class DatabaseSeeder extends Seeder
         $this->call(    ProjectSeeder::class);
         $this->call(ProjectTagsSeeder::class);
 
+        $this->call(PeopleSeeder::class);
+
+
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

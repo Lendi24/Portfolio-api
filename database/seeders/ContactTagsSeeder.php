@@ -17,19 +17,19 @@ class ContactTagsSeeder extends Seeder
     {
         $contactTags = [
             [
-                'name'   => 'E-mail',
+                'name'   => 'E-mail',//1
                 'type'   => 'text',
                 'icon'   => 'mdi-email',
             ],
 
             [
-                'name'   => 'Phone',
+                'name'   => 'Phone',//2
                 'type'   => 'text',
                 'icon'   => 'mdi-phone',
             ],
 
             [
-                'name'   => 'Discord',
+                'name'   => 'Discord',//3
                 'type'   => 'text',
                 'icon'   => 'mdi-discord',
             ],
@@ -37,22 +37,35 @@ class ContactTagsSeeder extends Seeder
 
 
             [
-                'name'   => 'LinkedIn',
+                'name'   => 'Website',//4
+                'type'   => 'button',
+                'icon'   => 'mdi-web',
+            ],
+
+            [
+                'name'   => 'GitHub',//5
+                'type'   => 'button',
+                'icon'   => 'mdi-github',
+            ],
+
+            [
+                'name'   => 'LinkedIn',//6
                 'type'   => 'button',
                 'icon'   => 'mdi-linkedin',
             ],
 
             [
-                'name'   => 'Twitter',
+                'name'   => 'YouTube',//7
                 'type'   => 'button',
-                'icon'   => 'mdi-twitter',
+                'icon'   => '',
             ],
 
             [
-                'name'   => 'GitHub',
+                'name'   => 'Twitter',//8
                 'type'   => 'button',
-                'icon'   => 'mdi-github',
+                'icon'   => '',
             ],
+
         ];
         
         foreach ($contactTags as $key => $value) {

@@ -9,22 +9,22 @@ use Illuminate\Database\Seeder;
 
 class ProjectTagsSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     * 
-     *  1 - Source
-     *       
-     *  2 - Windows
-     *  3 - Mac
-     *  4 - Linux
-     * 
-     *  5 - Android
-     *  6 - IOS
-     * 
-     *  7 - Web
-     * 
-     * @return void
-     */
+    /********************************
+     * Run the database seeds.      *
+     *                              *
+     *  1 - Source                  *
+     *                              *
+     *  2 - Windows                 *
+     *  3 - Mac                     *
+     *  4 - Linux                   *
+     *                              *
+     *  5 - Android                 *
+     *  6 - IOS                     *
+     *                              *
+     *  7 - Web                     *
+     *                              *
+     * @return void                 *
+     *******************************/
     public function run()
     {
         $plattformTags = [
