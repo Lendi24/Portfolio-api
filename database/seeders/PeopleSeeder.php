@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\AppliedContactTag;
+use App\Models\AppliedPersonOnProject;
 use App\Models\Person;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -134,12 +135,75 @@ class PeopleSeeder extends Seeder
             ],
         ];
 
+
+        $peopleOnProjects = [
+            [
+                'project_id'    =>  '1', //Butterfly
+                'person_id'     =>  '1',
+                'order'         =>  '1',
+            ],
+
+            [
+                'project_id'    =>  '1', //Butterfly
+                'person_id'     =>  '2',
+                'order'         =>  '2',
+            ],
+
+
+
+            [
+                'project_id'    =>  '2', //Portfolio
+                'person_id'     =>  '1',
+                'order'         =>  '3',
+            ],
+
+
+
+            [
+                'project_id'    =>  '3', //UnSite
+                'person_id'     =>  '1',
+                'order'         =>  '1',
+            ],
+
+            [
+                'project_id'    =>  '3', //UnSite
+                'person_id'     =>  '4', //E-mannen
+                'order'         =>  '2',
+            ],
+
+            [
+                'project_id'    =>  '3', //UnSite
+                'person_id'     =>  '5', //Ali
+                'order'         =>  '3',
+            ],
+
+
+
+            [
+                'project_id'    =>  '4', //Imitar
+                'person_id'     =>  '1',
+                'order'         =>  '2',
+            ],
+
+            [
+                'project_id'    =>  '4', //Imitar
+                'person_id'     =>  '3', //Jonathan
+                'order'         =>  '3',
+            ],
+
+        ];
+
         foreach ($people as $key => $value) {
             Person::create($value);
         }
 
         foreach ($people_contacts as $key => $value) {
             AppliedContactTag::create($value);
+        }
+
+        foreach ($peopleOnProjects as $key => $value) {
+            # code...
+            AppliedPersonOnProject::create($value);
         }
     }
 }

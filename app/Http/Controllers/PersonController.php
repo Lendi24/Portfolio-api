@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AppliedContactTag;
 use Illuminate\Http\Request;
 use App\Models\Person;
 use App\Models\Project;
@@ -47,7 +48,19 @@ class PersonController extends Controller
      */
     public function show($id)
     {
-        return Person::find($id);
+        //return Person::find($id);
+
+        $appliedContactTags  = (AppliedContactTag::select('contact_id','target','information')->where('person_id','=',$id) -> get());        
+
+        $person = (Person::find($id));
+
+        return [
+            'personData' => $person,
+            'tags' => [
+                'contactTags' => $appliedContactTags,
+            ],
+        ];
+
     }
 
     /**

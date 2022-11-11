@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AppliedContactTag;
 use App\Models\AppliedLanguageTag;
+use App\Models\AppliedPersonOnProject;
 use App\Models\AppliedPlattformTag;
 use App\Models\LanguageTag;
 use App\Models\PlattformTag;
@@ -61,6 +62,7 @@ class ProjectController extends Controller
     public function show($id) { 
         $appliedLanguageTags  = (AppliedLanguageTag::select('language_tag_id')->where('project_id','=',$id) -> get());        
         $appliedPlattformTags = (AppliedPlattformTag::select('plattfrom_tag_id', 'target')->where('project_id','=',$id) -> get()); 
+        $appliedPeople        = (AppliedPersonOnProject::select('person_id', 'order')->where('project_id','=',$id) -> get());
 
         $project = (Project::find($id));
 
@@ -69,7 +71,8 @@ class ProjectController extends Controller
             'tags' => [
                 'languageTags' => $appliedLanguageTags,
                 'plattformTags' => $appliedPlattformTags,    
-            ]
+                'people' => $appliedPeople,
+            ],
         ];
     }
     public function showLang($id) { return (Project::find($id) -> appliedLanguageTags); }
