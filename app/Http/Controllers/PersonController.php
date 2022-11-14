@@ -63,17 +63,6 @@ class PersonController extends Controller
 
     }
 
-    public function showImg($id)
-    {
-        $imgPath        = storage_path().'/images/people/profile-'.$id.'.png';
-        $imgPathDefault = storage_path().'/images/people/profile-'.'0'.'.svg';
-
-        if (file_exists( $imgPath )) {
-            return response()->file($imgPath);
-        } else {
-            return response()->file($imgPathDefault);
-        }    
-    }
 
 
     /**

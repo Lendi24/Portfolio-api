@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ImageController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\TagController;
@@ -53,12 +54,13 @@ Route::prefix('/v1')->group(function () {
     Route::prefix('/projects')->group(function () {
 
         //Public
-        Route::get   ('/',               [ProjectController::class, 'index'   ]    );
-        Route::get   ('/{id}',           [ProjectController::class, 'show'    ]    );
-        Route::get   ('/{id}/languages', [ProjectController::class, 'showLang']    );
-        Route::get   ('/{id}/plattforms',[ProjectController::class, 'showPlat']    );
-        Route::get   ('/{id}/people',    [ProjectController::class, 'showPeop']    );
-        Route::get   ('/search/{q}',     [ProjectController::class, 'search'  ]    );
+        Route::get   ('/',                  [ProjectController::class, 'index'   ]    );
+        Route::get   ('/{id}',              [ProjectController::class, 'show'    ]    );
+        Route::get   ('/{id}/languages',    [ProjectController::class, 'showLang']    );
+        Route::get   ('/{id}/plattforms',   [ProjectController::class, 'showPlat']    );
+        Route::get   ('/{id}/people',       [ProjectController::class, 'showPeop']    );
+        Route::get   ('/{id}/img/thumbnail',[ImageController::class,  'showProjectImg'    ]    );
+        Route::get   ('/search/{q}',        [ProjectController::class, 'search'  ]    );
         //Route::get   ('/length',         [ProjectController::class, 'getLen'  ]    );
 
         //Private
@@ -73,10 +75,10 @@ Route::prefix('/v1')->group(function () {
     Route::prefix('/people')->group(function () {
 
         //Public
-        Route::get   ('/',                [PersonController::class, 'index'  ]    );
-        Route::get   ('/{id}',            [PersonController::class, 'show'   ]    );
-        Route::get   ('/{id}/img/profile',[PersonController::class, 'showImg'   ]    );
-        Route::get   ('search/{q}',       [PersonController::class, 'search' ]    );
+        Route::get   ('/',                [PersonController::class, 'index'             ]    );
+        Route::get   ('/{id}',            [PersonController::class, 'show'              ]    );
+        Route::get   ('/{id}/img/profile',[ImageController::class,  'showProfileImg'    ]    );
+        Route::get   ('search/{q}',       [PersonController::class, 'search'            ]    );
 
         //Private
         Route::group(['middleware' => ['auth:sanctum']], function () {

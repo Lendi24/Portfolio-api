@@ -20,28 +20,28 @@ class ProjectSeeder extends Seeder
             [
                 'title'         => "The Butterfly Project",
                 'description'   => "Gamified learning tool for biology",
-                'image_URL'     => "https://placekitten.com/600/500",
+                'image_URL'     => "/api/v1/projects/1/img/thumbnail",
                 'writeup_URL'   => "",
             ],
 
             [
                 'title'         => "Portfolio Website",
                 'description'   => "This website! Do you want to know how it's built?",
-                'image_URL'     => "https://placekitten.com/500/600",
+                'image_URL'     => "/api/v1/projects/2/img/thumbnail",
                 'writeup_URL'   => "",
             ],
 
             [
                 'title'         => "UnSite",
                 'description'   => "Using the latest in user hostile dessign",
-                'image_URL'     => "https://placekitten.com/600/300",
+                'image_URL'     => "/api/v1/projects/3/img/thumbnail",
                 'writeup_URL'   => "",
             ],
 
             [
                 'title'         => "imitari",
                 'description'   => "Image editing software on the web",
-                'image_URL'     => "https://placekitten.com/800/400",
+                'image_URL'     => "/api/v1/projects/4/img/thumbnail",
                 'writeup_URL'   => "",
             ],
 

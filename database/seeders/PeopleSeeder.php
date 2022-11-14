@@ -29,7 +29,7 @@ class PeopleSeeder extends Seeder
                 'middle_name' => '',
                 'last_name'   => 'Lendic',
 
-                'image_URL'   => 'https://placekitten.com/200/300',
+                'image_URL'   => '/api/v1/people/1/img/profile',
             ],
 
             [
@@ -37,7 +37,7 @@ class PeopleSeeder extends Seeder
                 'middle_name' => '',
                 'last_name'   => 'Nilsson-Stor',
 
-                'image_URL'   => 'https://placekitten.com/200/300',
+                'image_URL'   => '/api/v1/people/2/img/profile',
             ],
 
             [
@@ -45,7 +45,7 @@ class PeopleSeeder extends Seeder
                 'middle_name' => '',
                 'last_name'   => 'Nilsson',
 
-                'image_URL'   => 'https://placekitten.com/200/300',
+                'image_URL'   => '/api/v1/people/3/img/profile',
             ],
 
             [
@@ -53,7 +53,7 @@ class PeopleSeeder extends Seeder
                 'middle_name' => '',
                 'last_name'   => '',
 
-                'image_URL'   => 'https://placekitten.com/200/300',
+                'image_URL'   => '/api/v1/people/4/img/profile',
             ],
 
             [
@@ -61,7 +61,7 @@ class PeopleSeeder extends Seeder
                 'middle_name' => '',
                 'last_name'   => '',
 
-                'image_URL'   => 'https://placekitten.com/200/300',
+                'image_URL'   => '/api/v1/people/5/img/profile',
             ],
         ];
 
