@@ -32,33 +32,33 @@ class ProjectTagsSeeder extends Seeder
             [
                 "project_id"        => "1",//Butterfly
                 "plattfrom_tag_id"  => "1",//Source
-                "target"            => "https://",
+                "target"            => "https://github.com/Lendi24/UnSite",
             ],
 
 
             [
                 "project_id"        => "1",//Butterfly
                 "plattfrom_tag_id"  => "2",//Windows
-                "target"            => "https://",
+                "target"            => "https://github.com/Lendi24/TheButterflyProject/releases/download/Alpha_0.3.0/Windows-TheButterflyProject_0.3.0.zip",
             ],
 
             [
                 "project_id"        => "1",//Butterfly
                 "plattfrom_tag_id"  => "3",//Mac
-                "target"            => "https://",
+                "target"            => "https://github.com/Lendi24/TheButterflyProject/releases/download/Alpha_0.3.0/Mac-TheButterflyProject_0.3.0.tar",
             ],
 
             [
                 "project_id"        => "1",//Butterfly
                 "plattfrom_tag_id"  => "4",//Linux
-                "target"            => "https://",
+                "target"            => "https://github.com/Lendi24/TheButterflyProject/releases/download/Alpha_0.3.0/Linux-TheButterflyProject_0.3.0.tar",
             ],
 
 
             [
                 "project_id"        => "1",//Butterfly
                 "plattfrom_tag_id"  => "5",//Android
-                "target"            => "https://",
+                "target"            => "https://github.com/Lendi24/TheButterflyProject/releases/download/Alpha_0.3.0/Android-TheButterflyProject_0.3.0.apk",
             ],
 
             /**/
@@ -66,7 +66,7 @@ class ProjectTagsSeeder extends Seeder
             [
                 "project_id"        => "2",//Portfolio
                 "plattfrom_tag_id"  => "1",//Source
-                "target"            => "https://",
+                "target"            => "https://github.com/Lendi24/Portfolio",
             ],
 
             /**/
@@ -74,13 +74,13 @@ class ProjectTagsSeeder extends Seeder
             [
                 "project_id"        => "3",//UnSite
                 "plattfrom_tag_id"  => "1",//Source
-                "target"            => "https://",
+                "target"            => "https://github.com/Lendi24/UnSite",
             ],
 
             [
                 "project_id"        => "3",//UnSite
                 "plattfrom_tag_id"  => "7",//Web
-                "target"            => "https://",
+                "target"            => "https://unsite.lendic.xyz/#/",
             ],
 
             /**/
@@ -88,13 +88,13 @@ class ProjectTagsSeeder extends Seeder
             [
                 "project_id"        => "4",//Imitari
                 "plattfrom_tag_id"  => "1",//Source
-                "target"            => "https://",
+                "target"            => "https://github.com/Lendi24/Imitari",
             ],
 
             [
                 "project_id"        => "4",//Imitari
                 "plattfrom_tag_id"  => "7",//Web
-                "target"            => "https://",
+                "target"            => "https://imitari.lendic.xyz/public/",
             ],
         ];
 
