@@ -73,9 +73,10 @@ Route::prefix('/v1')->group(function () {
     Route::prefix('/people')->group(function () {
 
         //Public
-        Route::get   ('/',              [PersonController::class, 'index'  ]    );
-        Route::get   ('/{id}',          [PersonController::class, 'show'   ]    );
-        Route::get   ('search/{q}',     [PersonController::class, 'search' ]    );
+        Route::get   ('/',                [PersonController::class, 'index'  ]    );
+        Route::get   ('/{id}',            [PersonController::class, 'show'   ]    );
+        Route::get   ('/{id}/img/profile',[PersonController::class, 'showImg'   ]    );
+        Route::get   ('search/{q}',       [PersonController::class, 'search' ]    );
 
         //Private
         Route::group(['middleware' => ['auth:sanctum']], function () {
