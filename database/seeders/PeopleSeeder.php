@@ -131,8 +131,35 @@ class PeopleSeeder extends Seeder
                 'contact_id'    => '4', //Website
 
                 'target'        => 'https://jonathan.lund-te4.se/',
-                'information'   => '',
+                'information'   => 'Portfolio',
             ],
+
+            ////
+
+            [
+                'person_id'     => '5', //Ali
+                'contact_id'    => '1', //E-mail
+
+                'target'        => 'mailto:aliakbarrezai1126@gmail.com',
+                'information'   => 'aliakbarrezai1126@gmail.com',
+            ],
+
+            [
+                'person_id'     => '5', //Ali
+                'contact_id'    => '5', //GitHub
+
+                'target'        => 'https://github.com/Ali-NTI-1126',
+                'information'   => 'Ali-NTI-1126',
+            ],
+
+            [
+                'person_id'     => '5', //Ali
+                'contact_id'    => '4', //Website
+
+                'target'        => 'https://ali.lund-te4.se/index.html',
+                'information'   => 'Portfolio',
+            ],
+
         ];
 
 
