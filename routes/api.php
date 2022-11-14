@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PersonController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\TagController;
 use App\Http\Controllers\UserController;
 
 use Illuminate\Http\Request;
@@ -43,9 +44,9 @@ Route::prefix('/v1')->group(function () {
     Route::prefix('/tags')->group(function () {
 
         //Public
-        Route::get   ('/languages/{id}',      [ProjectController::class, 'showLanguage'  ]    );
-        Route::get   ('/plattforms/{id}',     [ProjectController::class, 'showPlattform'  ]    );
-        //Route::get   ('/contact/{id}',       [PersonController::class,  ''  ]    );
+        Route::get   ('/languages/{id}',      [TagController::class, 'showLanguage'  ]    );
+        Route::get   ('/plattforms/{id}',     [TagController::class, 'showPlattform'  ]    );
+        Route::get   ('/contacts/{id}',       [TagController::class, 'showContact'  ]    );
 
     });
 

@@ -56,8 +56,6 @@ class ProjectController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function showLanguage($id) {return LanguageTag::find($id);}
-    public function showPlattform($id) {return PlattformTag::find($id);}
 
     public function show($id) { 
         $appliedLanguageTags  = (AppliedLanguageTag::select('language_tag_id')->where('project_id','=',$id) -> get());        
