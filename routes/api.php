@@ -40,6 +40,17 @@ Route::prefix('/v1')->group(function () {
         });    
     });
 
+    Route::prefix('/linking')->group(function () {
+        //Private
+        Route::group(['middleware' => ['auth:sanctum']], function () {
+            Route::post  ('person',          [TagController::class, 'linkPerson'  ]    );
+            Route::delete('person',          [TagController::class, 'unlinkPerson']    );
+        
+            Route::post  ('plattform',       [TagController::class, 'linkPlattform'  ]    );
+            Route::delete('plattform',       [TagController::class, 'unlinkPlattform']    );
+
+        });
+    });
 
 
     Route::prefix('/tags')->group(function () {

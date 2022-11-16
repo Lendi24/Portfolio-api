@@ -12,6 +12,10 @@ class AppliedPlattformTag extends Model
     protected $table = "applied_plattform_tags";
     protected $primaryKey = "id";
 
+    protected $fillable = [
+        'project_id', 'plattfrom_tag_id', 'target',
+    ];
+
     public function plattformTag() {
         return $this->belongsTo(PlattformTag::class);
     }

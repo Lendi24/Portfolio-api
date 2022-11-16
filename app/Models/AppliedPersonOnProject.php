@@ -12,6 +12,10 @@ class AppliedPersonOnProject extends Model
     protected $table = "applied_users_on_projects";
     protected $primaryKey = "id";
 
+    protected $fillable = [
+        'project_id', 'person_id', 'order'
+    ];
+
     public function plattformTag() {
         return $this->belongsTo(PlattformTag::class);
     }

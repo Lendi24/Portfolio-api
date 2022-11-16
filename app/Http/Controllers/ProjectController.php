@@ -39,7 +39,13 @@ class ProjectController extends Controller
         $request->validate([
             'title'             => 'required',
             'description'       => 'required',
+            /*
+            'plattforms'        => 'required',
+            'authors'           => 'required',*/
         ]);
+
+        //AppliedPersonOnProject::create();
+        //AppliedPlattformTag::create();
 
         return Project::create([
             'title'             => $request->title,
