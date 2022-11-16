@@ -12,4 +12,9 @@ class TagController extends Controller
     public function showLanguage($id)   {return LanguageTag::find($id);}
     public function showPlattform($id)  {return PlattformTag::find($id);}
     public function showContact($id)    {return ContactTag::find($id);}
+
+    public function indexLanguage()   {return LanguageTag::all();}
+    public function indexPlattform()  {return PlattformTag::all();}
+    public function indexContact()    {return ContactTag::all();}
+
 }

@@ -49,6 +49,10 @@ Route::prefix('/v1')->group(function () {
         Route::get   ('/plattforms/{id}',     [TagController::class, 'showPlattform'  ]    );
         Route::get   ('/contacts/{id}',       [TagController::class, 'showContact'  ]    );
 
+        Route::get   ('/languages',      [TagController::class, 'indexLanguage'  ]    );
+        Route::get   ('/plattforms',     [TagController::class, 'indexPlattform'  ]    );
+        Route::get   ('/contacts',       [TagController::class, 'indexContact'  ]    );
+
     });
 
     Route::prefix('/projects')->group(function () {
@@ -59,7 +63,7 @@ Route::prefix('/v1')->group(function () {
         Route::get   ('/{id}/languages',    [ProjectController::class, 'showLang']    );
         Route::get   ('/{id}/plattforms',   [ProjectController::class, 'showPlat']    );
         Route::get   ('/{id}/people',       [ProjectController::class, 'showPeop']    );
-        Route::get   ('/{id}/img/thumbnail',[ImageController::class,  'showProjectImg'    ]    );
+        Route::get   ('/{id}/img/thumbnail',[ImageController::class,   'showProjectImg'    ]    );
         Route::get   ('/search/{q}',        [ProjectController::class, 'search'  ]    );
         //Route::get   ('/length',         [ProjectController::class, 'getLen'  ]    );
 
