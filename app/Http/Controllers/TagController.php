@@ -49,14 +49,14 @@ class TagController extends Controller
     public function linkPlattform(Request $request)     {
         $request->validate([
             'project_id'        => 'required',
-            'plattform_id'      => 'required',
+            'plattform_tag_id'  => 'required',
             'target'            => 'required',
         ]);
 
         //return ContactTag::all();
         return AppliedPlattformTag::create([
             'project_id'        => $request->project_id,
-            'plattform_id'      => $request->plattform_id, 
+            'plattform_tag_id'  => $request->plattform_tag_id, 
             'target'            => $request->target,    
         ]);
     }

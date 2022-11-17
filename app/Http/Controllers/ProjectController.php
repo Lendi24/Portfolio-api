@@ -65,7 +65,7 @@ class ProjectController extends Controller
 
     public function show($id) { 
         $appliedLanguageTags  = (AppliedLanguageTag::select('language_tag_id')->where('project_id','=',$id) -> get());        
-        $appliedPlattformTags = (AppliedPlattformTag::select('plattfrom_tag_id', 'target')->where('project_id','=',$id) -> get()); 
+        $appliedPlattformTags = (AppliedPlattformTag::select('plattform_tag_id', 'target')->where('project_id','=',$id) -> get()); 
         $appliedPeople        = (AppliedPersonOnProject::select('person_id', 'order')->where('project_id','=',$id) -> get());
 
         $project = (Project::find($id));

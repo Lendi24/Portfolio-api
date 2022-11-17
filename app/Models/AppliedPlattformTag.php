@@ -13,7 +13,7 @@ class AppliedPlattformTag extends Model
     protected $primaryKey = "id";
 
     protected $fillable = [
-        'project_id', 'plattfrom_tag_id', 'target',
+        'project_id', 'plattform_tag_id', 'target',
     ];
 
     public function plattformTag() {
