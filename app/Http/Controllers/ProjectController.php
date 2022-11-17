@@ -51,7 +51,7 @@ class ProjectController extends Controller
             'title'             => $request->title,
             'description'       => $request->description,
 
-            'image_URL'         => 'img',
+            'image_URL'         => '/api/v1/projects/4/img/thumbnail',
             'writeup_URL'       => 'write',
         ]);
     }

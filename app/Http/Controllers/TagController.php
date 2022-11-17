@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AppliedPersonOnProject;
+use App\Models\AppliedPlattformTag;
 use App\Models\ContactTag;
 use App\Models\LanguageTag;
 use App\Models\PlattformTag;
@@ -53,7 +54,7 @@ class TagController extends Controller
         ]);
 
         //return ContactTag::all();
-        return AppliedPersonOnProject::create([
+        return AppliedPlattformTag::create([
             'project_id'        => $request->project_id,
             'plattform_id'      => $request->plattform_id, 
             'target'            => $request->target,    
