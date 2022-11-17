@@ -78,8 +78,8 @@ class PeopleSeeder extends Seeder
                 'person_id'     => '1', //Fabian Lendic
                 'contact_id'    => '4', //Website
 
-                'target'        => 'https://fabian.lendic.xyz/',
-                'information'   => '',
+                'target'        => 'https://portfolio.lendic.xyz/',
+                'information'   => 'Portfolio',
             ],
 
             [
