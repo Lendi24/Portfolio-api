@@ -39,21 +39,34 @@ class ProjectController extends Controller
         $request->validate([
             'title'             => 'required',
             'description'       => 'required',
+            'image'             => 'required',
             /*
             'plattforms'        => 'required',
             'authors'           => 'required',*/
         ]);
 
+
+
         //AppliedPersonOnProject::create();
         //AppliedPlattformTag::create();
 
-        return Project::create([
+        //imagepng(imagecreatefromstring(file_get_contents($filename)), "output.png");
+        $returnObj = Project::create([
             'title'             => $request->title,
             'description'       => $request->description,
 
-            'image_URL'         => '/api/v1/projects/4/img/thumbnail',
+            'image_URL'         => '',
             'writeup_URL'       => 'write',
         ]);
+
+        $imageName = 'thumbnail-'.$returnObj->id.'.'.$request->image->extension();
+        $request->image->move(storage_path('images/projects'), $imageName);
+
+        $project = Project::find($returnObj->id);
+        $project->image_URL = '/api/v1/projects/'.$returnObj->id.'/img/thumbnail';
+        $project->save();
+
+        return $returnObj;
     }
 
     /**
